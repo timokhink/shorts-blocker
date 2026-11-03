@@ -1,0 +1,92 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f5f8;
+  --card: #ffffff;
+  --text: #15171f;
+  --muted: #6b7080;
+  --accent: #ff5c5c;
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101219;
+    --card: #1c2030;
+    --text: #f0f1f5;
+    --muted: #9aa0b2;
+    --border: rgba(255, 255, 255, 0.08);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: -apple-system-body;
+  font-family: -apple-system, system-ui, sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  padding: env(safe-area-inset-top) 20px env(safe-area-inset-bottom);
+}
+
+main {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 40px 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.icon { border-radius: 22px; }
+
+h1 { font-size: 26px; margin: 8px 0 0; }
+
+.lead { color: var(--muted); margin: 0 0 8px; line-height: 1.4; }
+
+.card {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 20px;
+  text-align: left;
+}
+
+.card h2 { font-size: 17px; margin: 0 0 10px; }
+
+ol { margin: 0; padding-left: 22px; }
+
+li { margin: 8px 0; line-height: 1.4; }
+
+li small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+.platform-mac p { margin: 0 0 14px; line-height: 1.4; }
+
+button {
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.footer { color: var(--muted); font-size: 13px; margin-top: 8px; }
+
+/* Платформа и состояние выставляет ViewController через show() */
+.platform-ios, .platform-mac { display: none; }
+body.platform-ios .platform-ios,
+body.platform-mac .platform-mac { display: block; }
+
+.state-on, .state-off, .state-unknown { display: none; }
+body:not(.state-on):not(.state-off) .state-unknown,
+body.state-on .state-on,
+body.state-off .state-off { display: block; }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <link rel="stylesheet" href="../Style.css">
+  <script src="../Script.js" defer></script>
+</head>
+<body>
+  <main>
+    <img class="icon" src="../Icon.png" width="96" height="96" alt="">
+    <h1 data-i18n="title"></h1>
+    <p class="lead" data-i18n="lead"></p>
+
+    <section class="card platform-ios">
+      <h2 data-i18n="howTitle"></h2>
+      <ol>
+        <li><span data-i18n="step1"></span><small data-i18n="step1note"></small></li>
+        <li data-i18n="step2"></li>
+        <li data-i18n="step3"></li>
+        <li data-i18n="step4"></li>
+      </ol>
+    </section>
+
+    <section class="card platform-mac">
+      <p class="state-unknown" data-i18n="macUnknown"></p>
+      <p class="state-on" data-i18n="macOn"></p>
+      <p class="state-off" data-i18n="macOff"></p>
+      <button class="open-preferences" data-i18n="macButton"></button>
+    </section>
+
+    <p class="footer" data-i18n="footer"></p>
+  </main>
+</body>
+</html>
